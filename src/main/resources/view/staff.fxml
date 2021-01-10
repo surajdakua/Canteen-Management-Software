@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="288.0" prefWidth=".0" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="main.java.controllers.CanteenStaffController">
+    <children>
+        <GridPane style="-fx-padding: 10 10 10 10;">
+            <AnchorPane GridPane.columnIndex="0" prefWidth="300" prefHeight="450">
+                <Label text="Add Staff Details." GridPane.columnIndex="0"
+                       GridPane.rowIndex="0" GridPane.halignment="CENTER" layoutX="50" layoutY="10">
+                    <font>
+                        <Font name="Arial" size="24" ></Font>
+                    </font>
+                    <GridPane.margin>
+                        <Insets top="2" right="0" bottom="20" left="0"></Insets>
+                    </GridPane.margin>
+                </Label>
+
+                <Label text="STAFF ID : " GridPane.columnIndex="0" GridPane.rowIndex="0" layoutX="10" layoutY="55" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="staffCode" prefHeight="40" prefWidth="250" GridPane.columnIndex="0" GridPane.rowIndex="0" layoutX="10" layoutY="80"/>
+                <Label text="STAFF NAME : " GridPane.columnIndex="0" GridPane.rowIndex="1" layoutX="10" layoutY="140" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="staffName" prefHeight="40" prefWidth="250" GridPane.columnIndex="0" GridPane.rowIndex="1" layoutX="10" layoutY="165"/>
+                <Label text="STAFF AGE : " GridPane.columnIndex="0" GridPane.rowIndex="2" layoutX="10" layoutY="230" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="staffAge" prefHeight="40" prefWidth="250" GridPane.columnIndex="0" GridPane.rowIndex="2" layoutX="10" layoutY="250"/>
+                <Label text="STAFF SALARY : " GridPane.columnIndex="0" GridPane.rowIndex="3" layoutX="10" layoutY="320" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="staffSalary" prefHeight="40" prefWidth="250" GridPane.columnIndex="0" GridPane.rowIndex="3" layoutX="10" layoutY="340"/>
+                <Label text="STAFF HIREDATE : " GridPane.columnIndex="0" GridPane.rowIndex="4" layoutX="10" layoutY="400" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="staffHireDate" prefHeight="40" prefWidth="250" GridPane.columnIndex="0" GridPane.rowIndex="4" layoutX="10"
+                           layoutY="430" promptText="YYYY-MM-DD"/>
+                <JFXButton fx:id="btnInsert" style="-fx-background-color: black; -fx-padding: 5 0 5 30; -fx-font-weight: bold;"
+                           textFill="White" GridPane.columnIndex="0" GridPane.rowIndex="5" prefWidth="100"
+                           prefHeight="50" layoutX="15" alignment="BASELINE_LEFT"
+                           text="Insert" layoutY="480" onAction="#insertData">
+                </JFXButton>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="1" prefWidth="300" prefHeight="550">
+                <Label text="STAFF DESIGNATION : " GridPane.columnIndex="1" GridPane.rowIndex="0" layoutX="10" layoutY="55" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="staffDesignation" prefHeight="40" prefWidth="250" GridPane.columnIndex="0" GridPane.rowIndex="0" layoutX="10" layoutY="80"/>
+                <Label text="STAFF MOBILE NO : " GridPane.columnIndex="1" GridPane.rowIndex="1" layoutX="10" layoutY="140" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="staffMobNo" prefHeight="40" prefWidth="250" GridPane.columnIndex="0" GridPane.rowIndex="1" layoutX="10" layoutY="165"/>
+                <Label text="STAFF ID PROOF : " GridPane.columnIndex="1" GridPane.rowIndex="2" layoutX="10" layoutY="230" style="-fx-font-weight: bold;"/>
+                <JFXButton fx:id="btnUploadIdProof" style="-fx-background-color: GRAY; -fx-padding: 5 0 5 26; -fx-font-weight: bold;"
+                           textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="100"
+                           prefHeight="50" layoutX="12" alignment="BASELINE_LEFT" onAction="#captureStaffIdProof"
+                           text="Upload" layoutY="250" >
+                </JFXButton>
+                <Label text="STAFF ADDRESS : " GridPane.columnIndex="1" GridPane.rowIndex="3" layoutX="10" layoutY="315" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="staffAddress" prefHeight="40" prefWidth="250" GridPane.columnIndex="0" GridPane.rowIndex="3" layoutX="10" layoutY="335"/>
+                <Label text="STAFF PHOTO : " GridPane.columnIndex="1" GridPane.rowIndex="4" layoutX="10" layoutY="395" style="-fx-font-weight: bold;"/>
+                <JFXButton fx:id="btnUploadStaffPhoto" style="-fx-background-color: GRAY; -fx-padding: 5 0 5 26; -fx-font-weight: bold;"
+                           textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="100"
+                           prefHeight="50" layoutX="12" alignment="BASELINE_LEFT" onAction="#captureStaffImagePath"
+                           text="Upload" layoutY="420" >
+                </JFXButton>
+            </AnchorPane>
+            <AnchorPane GridPane.columnIndex="2" prefWidth="300" prefHeight="550">
+                <TableView fx:id="tableViewForCanteenStaff" layoutY="28.0" prefHeight="500.0"
+                           prefWidth="380.0" GridPane.rowIndex="0" onMouseClicked="#getCanteenStaffData"/>
+            </AnchorPane>
+                <JFXButton fx:id="btnUpdate" style="-fx-background-color: blue; -fx-padding: 5 15 5 22; -fx-font-weight: bold;" textFill="White"
+                           GridPane.columnIndex="1" GridPane.rowIndex="1" prefWidth="100" prefHeight="50"
+                           layoutY="570" alignment="BASELINE_CENTER" text="Update" onAction="#updateData">
+
+                </JFXButton>
+                <JFXButton fx:id="btDelete" style="-fx-background-color: red; -fx-padding: 5 23 5 22; -fx-font-weight: bold;" textFill="White"
+                           GridPane.columnIndex="0" GridPane.rowIndex="1" prefWidth="100" prefHeight="50"
+                            alignment="BASELINE_RIGHT" text="Delete" layoutX="190" onAction="#deleteData">
+
+                </JFXButton>
+        </GridPane>
+    </children>
+</AnchorPane>

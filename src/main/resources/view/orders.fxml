@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="288.0" prefWidth=".0" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="main.java.controllers.OrdersController">
+    <children>
+        <GridPane style="-fx-padding: 10 10 10 10;">
+            <TableView fx:id="tableView" layoutX="35.0" layoutY="28.0" prefHeight="650.0" prefWidth="970.0" GridPane.rowIndex="0"/>
+        </GridPane>
+
+    </children>
+</AnchorPane>

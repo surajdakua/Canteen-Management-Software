@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="288.0" prefWidth=".0" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="main.java.controllers.FoodController">
+    <children>
+        <GridPane style="-fx-padding: 10 10 10 10;">
+            <AnchorPane GridPane.columnIndex="0" prefWidth="450" prefHeight="650">
+                <Label text="ADD FOOD ITEMS TO MENU." GridPane.columnIndex="0"
+                       GridPane.rowIndex="0" GridPane.halignment="CENTER" layoutX="65" layoutY="10">
+                    <font>
+                        <Font name="Arial" size="20" ></Font>
+                    </font>
+                    <GridPane.margin>
+                        <Insets top="2" right="0" bottom="20" left="0"></Insets>
+                    </GridPane.margin>
+                </Label>
+
+                <Label text="Food ID : " GridPane.columnIndex="0" GridPane.rowIndex="0" layoutX="10" layoutY="40" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="foodID" prefHeight="30" prefWidth="400" GridPane.columnIndex="0" GridPane.rowIndex="0" layoutX="10" layoutY="70"/>
+                <Label text="FOOD NAME : " GridPane.columnIndex="0" GridPane.rowIndex="1" layoutX="10" layoutY="115" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="foodItem" prefHeight="30" prefWidth="400" GridPane.columnIndex="0" GridPane.rowIndex="1" layoutX="10" layoutY="135"/>
+                <Label text="FOOD PRICE : " GridPane.columnIndex="0" GridPane.rowIndex="2" layoutX="10" layoutY="180" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="foodAmount" prefHeight="30" prefWidth="400" GridPane.columnIndex="0" GridPane.rowIndex="2" layoutX="10" layoutY="205"/>
+                <Label text="FOOD DISCOUNT : " GridPane.columnIndex="0" GridPane.rowIndex="3" layoutX="10" layoutY="250" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="foodDiscount" prefHeight="30" prefWidth="400" GridPane.columnIndex="0" GridPane.rowIndex="3" layoutX="10" layoutY="270"/>
+                <Label text="FOOD ITEM CATEGORY : " GridPane.columnIndex="0" GridPane.rowIndex="4" layoutX="10" layoutY="310" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="foodItemCategory" prefHeight="30" prefWidth="400" GridPane.columnIndex="0" GridPane.rowIndex="4" layoutX="10" layoutY="335"/>
+                <Label text="FOOD DESCRIPTION : " GridPane.columnIndex="0" GridPane.rowIndex="4" layoutX="10" layoutY="380" style="-fx-font-weight: bold;"/>
+                <TextField fx:id="foodDescription" prefHeight="75" prefWidth="400" GridPane.columnIndex="0" GridPane.rowIndex="4" layoutX="10" layoutY="400"/>
+                <Label text="UPLOAD FOOD PHOTO : " GridPane.columnIndex="0" GridPane.rowIndex="4" layoutX="10" layoutY="480" style="-fx-font-weight: bold;"/>
+                <JFXButton fx:id="btnUploadFile" style="-fx-background-color: GRAY; -fx-padding: 5 0 5 26; -fx-font-weight: bold;"
+                           textFill="WHITE" GridPane.columnIndex="0" GridPane.rowIndex="0" prefWidth="100"
+                           prefHeight="50" layoutX="12" alignment="BASELINE_LEFT" onAction="#captureImagePath"
+                           text="Upload" layoutY="510" >
+                </JFXButton>
+
+                <JFXButton fx:id="btnInsert" style="-fx-background-color: green; -fx-padding: 5 0 5 30; -fx-font-weight: bold;"
+                           textFill="White" GridPane.columnIndex="0" GridPane.rowIndex="0" prefWidth="100"
+                           prefHeight="50" layoutX="15" alignment="BASELINE_LEFT" onAction="#insertData"
+                           text="Insert" layoutY="570" >
+                </JFXButton>
+                <JFXButton fx:id="btnUpdate" style="-fx-background-color: blue; -fx-padding: 5 15 5 22; -fx-font-weight: bold;" textFill="White"
+                           GridPane.columnIndex="0" GridPane.rowIndex="0" prefWidth="100" prefHeight="50"
+                           layoutX="150" layoutY="570" alignment="BASELINE_CENTER" text="Update" onAction="#updateData">
+
+                </JFXButton>
+                <JFXButton fx:id="btDelete" style="-fx-background-color: red; -fx-padding: 5 23 5 22; -fx-font-weight: bold;" textFill="White"
+                           GridPane.columnIndex="0" GridPane.rowIndex="0" prefWidth="100" prefHeight="50"
+                           layoutX="280" alignment="BASELINE_RIGHT" layoutY="570" text="Delete" onAction="#deleteData">
+
+                </JFXButton>
+            </AnchorPane>
+
+            <TableView fx:id="tableView" layoutX="350.0" layoutY="28.0" prefHeight="580.0"
+                       prefWidth="500.0" GridPane.rowIndex="0" GridPane.columnIndex="1" onMouseClicked="#getData"/>
+        </GridPane>
+
+    </children>
+</AnchorPane>
